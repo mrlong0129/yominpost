@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "yominpost": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/mrlong0129/yominpost", "yominpost-mcp"]
+    }
+  }
+}

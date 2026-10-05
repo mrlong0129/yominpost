@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YominPost</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%236d28d9'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='%23fff' font-family='Arial' font-weight='bold'%3EY%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <svg id="yp-icons" xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <symbol id="i-calendar" viewBox="0 0 20 20"><rect x="2" y="4" width="16" height="13" rx="2"/><path d="M6 2v4M14 2v4M2 8.5h16"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 20 20"><path d="M8 3l1.5 4.5L14 9l-4.5 1.5L8 15l-1.5-4.5L2 9l4.5-1.5L8 3z"/><path d="M15.5 12v5M13 14.5h5"/></symbol>
+    <symbol id="i-robot" viewBox="0 0 20 20"><rect x="3" y="7" width="14" height="10" rx="2"/><path d="M10 7V4.2"/><circle cx="10" cy="3" r="1"/><path d="M7.5 11.3v1.4M12.5 11.3v1.4M7.5 14.5h5"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 20 20"><path d="M11.5 2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6.5L11.5 2z"/><path d="M11.5 2v4.5H16"/><path d="M7 11h6M7 14h6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/><path d="M10 5v5l3 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 11l4 4L16 5"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 20 20"><path d="M13 3l4 4L7 17H3v-4L13 3z"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 20 20"><path d="M7 2v4M13 2v4"/><path d="M5 6h10v3a5 5 0 0 1-10 0V6z"/><path d="M10 14v4"/></symbol>
+    <symbol id="i-image" viewBox="0 0 20 20"><rect x="2.5" y="3.5" width="15" height="13" rx="2"/><circle cx="7" cy="8" r="1.3"/><path d="M4.5 15.5l4-4.5 3 3.5 2-2.5 2.5 3"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3"/><path d="M10 2v2.5M10 15.5V18M2 10h2.5M15.5 10H18M4.3 4.3l1.8 1.8M13.9 13.9l1.8 1.8M15.7 4.3l-1.8 1.8M6.1 13.9l-1.8 1.8"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 20 20"><path d="M4.5 3.5h11a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H10l-3.5 3v-3h-2a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 20 20"><path d="M3 3v14h14"/><path d="M7 14v-4M11 14v-8M15 14v-5"/></symbol>
+    <symbol id="i-target" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/><circle cx="10" cy="10" r="4.5"/><circle cx="10" cy="10" r="0.8"/></symbol>
+    <symbol id="i-key" viewBox="0 0 20 20"><circle cx="6" cy="14" r="3.5"/><path d="M8.5 11.5L17 3M13 7l2.5 2.5M15.5 4.5l2.5 2.5"/></symbol>
+    <symbol id="i-scroll" viewBox="0 0 20 20"><rect x="4" y="2" width="12" height="16" rx="2"/><path d="M7.5 7h5M7.5 10.5h5"/><path d="M16 14.5c0 2-1.2 3.5-3.2 3.5"/></symbol>
+    <symbol id="i-sync" viewBox="0 0 20 20"><path d="M2.5 10a7.5 7.5 0 0 1 7.5-7.5c2.1 0 4.1.8 5.6 2.3L17.5 6.7"/><path d="M17.5 2.5v4.2h-4.2"/><path d="M17.5 10a7.5 7.5 0 0 1-7.5 7.5c-2.1 0-4.1-.8-5.6-2.3L2.5 13.3"/><path d="M6.7 13.3H2.5v4.2"/></symbol>
+    <symbol id="i-play" viewBox="0 0 20 20"><path d="M7 4l9 6-9 6V4z"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 20 20"><path d="M8 2h4M8.5 2v5.5L4.2 14.8a1.8 1.8 0 0 0 1.6 2.7h8.4a1.8 1.8 0 0 0 1.6-2.7L11.5 7.5V2"/><path d="M6.2 12.5h7.6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15"/></symbol>
+    <symbol id="i-zoom" viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.8 12.8l4.7 4.7"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 20 20"><path d="M3 5.5h14"/><path d="M8 5.5V4a1.5 1.5 0 0 1 1.5-1.5h1A1.5 1.5 0 0 1 12 4v1.5"/><path d="M5 5.5l.7 11a1.8 1.8 0 0 0 1.8 1.7h5a1.8 1.8 0 0 0 1.8-1.7l.7-11"/><path d="M8.2 9v6M11.8 9v6"/></symbol>
+    <symbol id="i-warning" viewBox="0 0 20 20"><path d="M10 3.5L18 17H2L10 3.5z"/><path d="M10 8.5v3.5"/><path d="M10 14.8v.01"/></symbol>
+    <symbol id="i-hash" viewBox="0 0 20 20"><path d="M8 3L6 17M14 3l-2 14M4 7.5h13M3 12.5h13"/></symbol>
+    <symbol id="i-door" viewBox="0 0 20 20"><path d="M8 3H5a1.8 1.8 0 0 0-1.8 1.8v10.4A1.8 1.8 0 0 0 5 17h3"/><path d="M13 6.5l3.5 3.5-3.5 3.5M16.5 10H8"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 20 20"><path d="M2 10.5h3.5L8 5l4 10 2.5-4.5H18"/></symbol>
+  </svg>
+  <div id="app">
+    <!-- 侧栏 -->
+    <aside class="sidebar">
+      <button id="wsSwitcher" class="ws-switcher">
+        <span class="ws-avatar" id="wsAvatar">YP</span>
+        <span class="ws-name" id="wsName">加载中…</span>
+        <span class="chev">›</span>
+      </button>
+      <div id="wsMenu" class="ws-menu hidden"></div>
+
+      <button class="btn-primary create-btn" data-action="compose">+ Create post</button>
+
+      <nav class="nav">
+        <a class="nav-item active" data-view="calendar"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-calendar"/></svg> Calendar</a>
+        <a class="nav-item" data-view="scheduled"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-clock"/></svg> Scheduled</a>
+        <a class="nav-item" data-view="studio"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-sparkles"/></svg> Content Studio</a>
+        <div class="nav-label">WORKSPACE</div>
+        <a class="nav-item" data-view="connections"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-plug"/></svg> Connections</a>
+        <a class="nav-item" data-view="accounts"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-pulse"/></svg> 渠道管理</a>
+        <a class="nav-item" data-view="assets"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-image"/></svg> Assets</a>
+        <a class="nav-item" data-view="topics"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-hash"/></svg> Topics</a>
+        <div class="nav-label">OTHERS</div>
+        <a class="nav-item" data-view="settings"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-gear"/></svg> Settings</a>
+      </nav>
+      <div class="sidebar-foot">
+        <a class="nav-item" id="logoutBtn" data-action="logout" style="display:none"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-door"/></svg> 退出登录</a>
+        <div>YominPost · 8 能力槽内容引擎</div>
+      </div>
+    </aside>
+
+    <!-- 主区 -->
+    <main class="main" id="main">
+      <div class="loading">加载中…</div>
+    </main>
+  </div>
+
+  <!-- 组合器抽屉 -->
+  <div id="composer" class="drawer hidden">
+    <div class="drawer-panel">
+      <div class="drawer-head">
+        <h2>Create post</h2>
+        <button class="icon-btn" data-action="close-composer"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></button>
+      </div>
+      <div class="drawer-body" id="composerBody"></div>
+    </div>
+  </div>
+
+  <!-- Create Post · Canvas + Chatbot(左对话 / 右每渠道多模态卡片) -->
+  <div id="canvas" class="canvas">
+    <div class="cv-chat">
+      <div class="cv-chat-head">
+        <h2><svg class="ico" aria-hidden="true"><use href="#i-sparkles"/></svg> Create post</h2>
+        <div class="row" style="gap:6px">
+          <button class="btn" id="cvBoardToggle" data-action="cv-toggle-board" style="display:none">看板</button>
+          <button class="icon-btn" data-action="cv-close"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></button>
+        </div>
+      </div>
+      <div class="cv-log" id="cvLog"></div>
+      <div class="cv-compose">
+        <div class="cv-setup" id="cvSetup"></div>
+        <div class="cv-focus hidden" id="cvFocus"></div>
+        <div class="cv-suggest" id="cvSuggest"></div>
+        <div class="cv-input">
+          <textarea id="cvInput" placeholder="粘贴素材开始;生成后在这里说“把 IG 写得更有故事感 / 加一个 X / 都更口语化”来调整"></textarea>
+          <button class="btn-primary" data-action="cv-send" id="cvSend">发送</button>
+        </div>
+      </div>
+    </div>
+    <div class="cv-board">
+      <button class="cv-back-chat" data-action="cv-toggle-board">‹ 对话</button>
+      <div class="cv-board-head" id="cvBoardHead"></div>
+      <div class="cv-viewport" id="cvViewport"><div class="cv-world" id="cvWorld"></div></div>
+      <div class="cv-zoom">
+        <button class="icon-btn" data-action="cv-zoom-out" title="缩小">−</button>
+        <span id="cvZoomLabel">100%</span>
+        <button class="icon-btn" data-action="cv-zoom-in" title="放大">+</button>
+        <button class="icon-btn" data-action="cv-zoom-fit" title="适配全部">◱</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 通用模态(连接渠道等) -->
+  <div id="modal" class="modal-overlay hidden">
+    <div class="modal-box" id="modalBox"></div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

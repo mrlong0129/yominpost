@@ -1,0 +1,40 @@
+# ---- 运行时数据 / 密钥(绝不入库)----
+data/
+artifacts/
+*.db
+*.db-shm
+*.db-wal
+.secret.key
+*.env
+.env
+!.env.example
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.worktrees/
+.superpowers/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# ---- OS / 编辑器 ----
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# ---- 日志 / 临时 ----
+*.log
+nohup.out
+
+# ---- 本地 Agent / 工具状态 ----
+.cursor/
+.claude/settings.local.json
+.coverage
+htmlcov/

@@ -1,0 +1,43 @@
+# YominPost
+
+> YominPost is an open-source (MIT), self-hosted AI social media studio. One piece of material (text, URL or images) becomes platform-native posts: a rule-based router picks the format per platform (text, thread, image post, carousel, short video), a content engine writes hook/body/CTA/hashtags, a QA step scores and rewrites once, and a pre-publish risk gate catches signals that get AI-assisted accounts restricted. Real OAuth2 + PKCE connectors schedule and publish. It ships as a FastAPI web app, a CLI (`yominpost`), an MCP server (`yominpost-mcp`) for Claude Code / Cursor, and an agent skill (SKILL.md). Zero config: no API keys required (offline template driver by default), data in ~/.yominpost/.
+
+Author: Yomin Ma (https://yomin.love, https://x.com/HEee1850894). Repository: https://github.com/mrlong0129/yominpost
+
+## What it does
+
+- 8-slot content engine: brand DNA → trends → ideation & calendar → format router (explainable rules) → copy → visual (SVG/JPG poster, optional gpt-image) → short-video storyboard + SRT → QA self-critique.
+- Post Creating Loop: material → analysis → research → strategy → one draft per channel on an infinite canvas with chat refinement.
+- Drivers: template (offline, default), claude_code (local claude CLI), codex (local codex CLI), agy, anthropic (API); automatic fallback chain.
+- Real publishing: X, LinkedIn, Reddit, Facebook Page, Instagram, YouTube Shorts, Discord, Mastodon (self-registering app), Telegram, Bluesky, Webhook. Simulated: TikTok, Xiaohongshu, Threads, Pinterest.
+- Pre-publish risk gate: prompt leak, engagement bait, hashtag/link limits, duplicate detection, per-platform cadence caps, auto-freeze after a platform block.
+- Operations: calendar, scheduled queue with retry, asset library, topic bank, per-channel health, daily channel sync, backups.
+- Security: Fernet-encrypted tokens, operator access key (mandatory for public deploys), SSRF-guarded fetching.
+
+## MCP tools
+
+- generate_posts(brand, material, platforms, num_topics, trends, language)
+- check_post(text, platform, hashtags)
+- save_draft(text, title, hook, cta, hashtags, platforms)
+- list_posts(status, limit)
+- list_platforms()
+- No publish tool by design: a human approves publishing in the web UI.
+
+## Quick start
+
+- Studio: `uvx --from git+https://github.com/mrlong0129/yominpost yominpost --open` (http://127.0.0.1:8300)
+- CLI: `uvx --from git+https://github.com/mrlong0129/yominpost yominpost run --brand Acme --source "..." --platform x --platform linkedin --json`
+- MCP (Claude Code): `claude mcp add yominpost -- uvx --from git+https://github.com/mrlong0129/yominpost yominpost-mcp`
+
+## Docs
+
+- [README](https://github.com/mrlong0129/yominpost/blob/main/README.md): pitch, features, quickstart, architecture, FAQ (English + Chinese)
+- [AGENTS.md](https://github.com/mrlong0129/yominpost/blob/main/AGENTS.md): instructions for coding agents
+- [SKILL.md](https://github.com/mrlong0129/yominpost/blob/main/skill/SKILL.md): platform-format and risk-check playbook for agents
+- [ARCHITECTURE.md](https://github.com/mrlong0129/yominpost/blob/main/ARCHITECTURE.md): storage, data model, security (Chinese)
+- [docs/PLATFORM_RISK.md](https://github.com/mrlong0129/yominpost/blob/main/docs/PLATFORM_RISK.md): why AI-assisted accounts get restricted and how the gate works (Chinese)
+
+## Related
+
+- [agent-web-fetch](https://github.com/mrlong0129/agent-web-fetch): web reading for AI agents
+- [wechat-article-fetcher](https://github.com/mrlong0129/wechat-article-fetcher): WeChat articles to Markdown

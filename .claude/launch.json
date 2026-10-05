@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "yominpost",
+      "runtimeExecutable": ".venv/bin/python",
+      "runtimeArgs": ["-m", "uvicorn", "yominpost.web.app:app", "--host", "127.0.0.1", "--port", "8300"],
+      "port": 8300
+    },
+    {
+      "name": "yominpost-preview",
+      "runtimeExecutable": ".venv/bin/python",
+      "runtimeArgs": ["deploy/preview_run.py"],
+      "port": 8401
+    }
+  ]
+}
