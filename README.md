@@ -1,5 +1,9 @@
 # YominPost
 
+<!-- yarkr:badges:start -->
+[![Indexed on Yarkr](https://api.yarkr.com/functions/v1/api/api/v1/badges/repos/mrlong0129/yominpost/version.svg)](https://yarkr.com/arks/mrlong0129/yominpost)
+<!-- yarkr:badges:end -->
+
 > **One piece of material in, platform-native posts out. Reviewed, risk-checked, scheduled and published from a studio you host yourself.**
 >
 > 一份素材 → 每个渠道一版地道的帖子 → 发布前风控检查 → 排期 / 发布。自托管，默认零配置、无需任何 API Key。
@@ -48,6 +52,38 @@ mkdir -p ~/.cursor/skills/yominpost && curl -fsSL https://raw.githubusercontent.
 ```
 
 Instructions for coding agents live in [AGENTS.md](AGENTS.md).
+
+<!-- yarkr:install:start -->
+## Install with Yarkr
+
+This repo is indexed on [Yarkr](https://yarkr.com/arks/mrlong0129/yominpost) as the ark [mrlong0129/yominpost](https://yarkr.com/arks/mrlong0129/yominpost), so its skills install into Claude Code, Codex, Cursor and other agent harnesses with one command.
+
+### CLI
+
+Install the whole ark, which Yarkr keeps equal to this repo:
+
+```bash
+npx yarkr-cli sync mrlong0129/yominpost
+```
+
+Or add individual skills:
+
+```bash
+npx yarkr-cli add skill:mrlong0129/yominpost/yominpost
+```
+
+No Node.js? `curl -fsSL https://yarkr.com/install.sh | sh` (macOS, Linux) or `irm https://yarkr.com/install.ps1 | iex` (Windows PowerShell) installs `yarkr` as a standalone binary; then type `yarkr` in place of `npx yarkr-cli`.
+
+### MCP
+
+Connect your agent to the ark over MCP:
+
+```bash
+npx yarkr-cli mcp add mrlong0129/yominpost
+```
+
+Or point any MCP client at `https://api.yarkr.com/functions/v1/api/mcp/o/mrlong0129/yominpost`.
+<!-- yarkr:install:end -->
 
 ## Why
 
